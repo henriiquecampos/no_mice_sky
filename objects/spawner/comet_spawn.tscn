@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://objects/spawner/comet_spawn.gd" type="Script" id=1]
+[ext_resource path="res://objects/comet/comet.tscn" type="PackedScene" id=2]
+
+[node name="comet_spawn" type="Node"]
+
+script = ExtResource( 1 )
+comet_scene = ExtResource( 2 )
+moon = null
+min_spawn_time = 4.0
+max_spawn_time = 8.0
+
+[node name="timer" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
+
+

@@ -1,0 +1,669 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects/space/star_back.png" type="Texture" id=1]
+[ext_resource path="res://objects/space/starboy_crux.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+func _ready():
+#	get_node(\"Animator\").set_speed(rand_range(0.5,2.0))
+	pass"
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "shine"
+length = 3.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "fade"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="background" type="CanvasLayer"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="star" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+position = Vector2( 383.626, 378.185 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star2" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+position = Vector2( 321.956, 430.275 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star2" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star3" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 311.179, 365.013 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star3" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star4" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 722.72, 292.812 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star4" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star5" type="Sprite" parent="." index="4"]
+
+editor/display_folded = true
+position = Vector2( 830.117, 289.202 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star5" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star6" type="Sprite" parent="." index="5"]
+
+editor/display_folded = true
+position = Vector2( 986.25, 371.33 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star6" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star7" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 1062.06, 494.07 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star7" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star8" type="Sprite" parent="." index="7"]
+
+editor/display_folded = true
+position = Vector2( 791.31, 587.028 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star8" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star9" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 320.204, 706.158 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star9" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star10" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 1062.06, 695.328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star10" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star11" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 1168.6, 84.2608 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star11" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star12" type="Sprite" parent="." index="11"]
+
+editor/display_folded = true
+position = Vector2( 1198.42, 129.955 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star12" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star13" type="Sprite" parent="." index="12"]
+
+editor/display_folded = true
+position = Vector2( 1119.32, 114.167 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star13" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star14" type="Sprite" parent="." index="13"]
+
+editor/display_folded = true
+position = Vector2( 1158.68, 147.728 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star14" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star15" type="Sprite" parent="." index="14"]
+
+editor/display_folded = true
+position = Vector2( 1136.24, 234.199 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star15" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star16" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
+position = Vector2( 280.414, 152.518 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star16" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star17" type="Sprite" parent="." index="16"]
+
+editor/display_folded = true
+position = Vector2( 352.232, 132.476 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star17" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star18" type="Sprite" parent="." index="17"]
+
+editor/display_folded = true
+position = Vector2( 429.06, 109.093 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star18" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star19" type="Sprite" parent="." index="18"]
+
+editor/display_folded = true
+position = Vector2( 100.034, 483.215 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star19" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star20" type="Sprite" parent="." index="19"]
+
+editor/display_folded = true
+position = Vector2( 171.852, 473.193 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star20" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star21" type="Sprite" parent="." index="20"]
+
+editor/display_folded = true
+position = Vector2( 213.606, 524.969 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star21" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star22" type="Sprite" parent="." index="21"]
+
+editor/display_folded = true
+position = Vector2( 158.49, 588.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star22" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star23" type="Sprite" parent="." index="22"]
+
+editor/display_folded = true
+position = Vector2( 69.9703, 563.383 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star23" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star24" type="Sprite" parent="." index="23"]
+
+editor/display_folded = true
+position = Vector2( 86.6721, 683.637 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star24" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star27" type="Sprite" parent="." index="24"]
+
+editor/display_folded = true
+position = Vector2( 88.3423, 247.718 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star27" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star28" type="Sprite" parent="." index="25"]
+
+editor/display_folded = true
+position = Vector2( 978.551, 99.0719 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star28" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star29" type="Sprite" parent="." index="26"]
+
+editor/display_folded = true
+position = Vector2( 749.736, 84.0402 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star29" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star30" type="Sprite" parent="." index="27"]
+
+editor/display_folded = true
+position = Vector2( 875, 17.2328 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star30" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star31" type="Sprite" parent="." index="28"]
+
+editor/display_folded = true
+position = Vector2( 1138.56, 614.789 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star31" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star32" type="Sprite" parent="." index="29"]
+
+editor/display_folded = true
+position = Vector2( 1220.36, 578.436 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star32" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="star33" type="Sprite" parent="." index="30"]
+
+editor/display_folded = true
+position = Vector2( 1222.63, 321.691 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="Animator" type="AnimationPlayer" parent="star33" index="0"]
+
+root_node = NodePath("..")
+autoplay = "shine"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/shine = SubResource( 2 )
+blend_times = [  ]
+
+[node name="crux" type="Sprite" parent="." index="31" groups=[
+"crux",
+]]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1151.57, 159.319 )
+rotation = 0.20069
+scale = Vector2( 0.786583, 0.786583 )
+z_index = -1
+texture = ExtResource( 2 )
+
+[node name="Animator" type="AnimationPlayer" parent="crux" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/fade = SubResource( 3 )
+blend_times = [  ]
+
+[node name="space" type="Polygon2D" parent="." index="32"]
+
+z_index = -1
+polygon = PoolVector2Array( 0, 0, 1280, 0, 1280, 720, 0, 720 )
+uv = PoolVector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = PoolColorArray( 0.160904, 0.169114, 0.371094, 1, 0.160784, 0.168627, 0.368627, 1, 0.0912476, 0.0973856, 0.253906, 1, 0.0901961, 0.0941176, 0.25098, 1 )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
+_sections_unfolded = [ "Z Index" ]
+
+

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://objects/moon/moon.gd" type="Script" id=1]
+[ext_resource path="res://objects/moon/sprite.png" type="Texture" id=2]
+[ext_resource path="res://objects/spawner/spawner.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 136.0
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "rotate"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 360.0, 0.0 ]
+}
+
+[node name="moon" type="StaticBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+player = null
+custom_gravity = null
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+rotation = 6.28319
+scale = Vector2( 1.125, 1.125 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="spikes" type="RemoteTransform2D" parent="sprite" index="0"]
+
+remote_path = NodePath("../../spikes")
+use_global_coordinates = true
+update_position = false
+update_rotation = true
+update_scale = false
+_sections_unfolded = [ "Update" ]
+
+[node name="shape" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[node name="animation_player" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = "rotate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/rotate = SubResource( 2 )
+blend_times = [  ]
+
+[node name="spawn" parent="." index="3" instance=ExtResource( 3 )]
+
+[node name="spawn_position" parent="spawn" index="2"]
+
+position = Vector2( 0, -136 )
+
+[node name="spikes" type="Position2D" parent="." index="4"]
+
+rotation = 4.46638e-06
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+
+[editable path="spawn"]
